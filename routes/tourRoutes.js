@@ -5,6 +5,11 @@ const router = express.Router();
 
 // router.param('id', tourController.checkID);
 
+//to get the top 5 tours, We can always make a default routes as mentioned below
+router
+  .route('/top-5-cheap')
+  .get(tourController.aliasTopTours, tourController.getAllTours);
+
 router
   .route('/')
   .get(tourController.getAllTours)

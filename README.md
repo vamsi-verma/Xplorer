@@ -1,4 +1,4 @@
-# natours
+# XplorerWorld
 
 To import the data use "**_node dev-data/data/import-dev-data.js --import_**"
 to delete all data from DB use "**_node dev-data/data/import-dev-data.js --delete_**"

@@ -7,7 +7,7 @@ const tourSchema = new mongoose.Schema(
     name: {
       type: String,
       //here in required the two values are 1st value shows that name is required, 2nd argument defines error when user doesn't insert name
-      required: [true, 'A tour must hav a name!!'],
+      required: [true, 'A tour must have a name!!'],
       unique: true,
       trim: true,
       maxlength: [40, 'A tour name must have less or equal than 40 characters'],

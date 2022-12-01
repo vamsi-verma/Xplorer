@@ -63,8 +63,7 @@ module.exports = (err, req, res, next) => {
     // let error = Object.create(err);
     //     let error = JSON.stringify(err);
     //     error = JSON.parse(error);
-    let error;
-    Object.assign(error, err);
+    let error = Object.assign(err);
     console.log('vamsi', error);
     console.log('vamsi23', err);
     if (error.name === 'CastError') {

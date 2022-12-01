@@ -22,3 +22,11 @@ password encryption done with 12 bit bcrypt js module.
 ### Authenication
 
 Authentication done with JSON Web Token(JWT)
+
+### NodeMailer npm package
+
+development mail box used: mailtrap
+Username:
+478d527464dfea
+Password:
+c9b1fe79e0ca61

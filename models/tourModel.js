@@ -121,6 +121,7 @@ const tourSchema = new mongoose.Schema(
 //Here price: 1 means sorting in ascending order
 tourSchema.index({ price: 1, ratingsAverage: -1 });
 tourSchema.index({ slug: 1 });
+tourSchema.index({ startLocation: '2dsphere' });
 
 tourSchema.virtual('durationWeeks').get(function () {
   return this.duration / 7;
@@ -161,10 +162,10 @@ tourSchema.post(/^find/, function (docs, next) {
 });
 
 // // AGGREGATION MIDDLEWARE
-tourSchema.pre('aggregate', function (next) {
-  this.pipeline().unshift({ $match: { secretTour: { $ne: true } } });
-  next();
-});
+// tourSchema.pre('aggregate', function (next) {
+//   this.pipeline().unshift({ $match: { secretTour: { $ne: true } } });
+//   next();
+// });
 
 // Here the variable name is started with uppercase as it is the convention for model Names.
 const Tour = mongoose.model('Tour', tourSchema);

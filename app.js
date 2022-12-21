@@ -67,6 +67,7 @@ app.use('/api', limiter);
 
 //Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cookieParser());
 
 //to login without knowing the email: "email": {"$gt":""}
@@ -93,7 +94,6 @@ app.use(
 //Test Middleware
 app.use((req, res, next) => {
   next();
-  console.log(req.cookies);
 });
 
 app.use((req, res, next) => {
